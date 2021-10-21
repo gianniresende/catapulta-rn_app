@@ -1,11 +1,12 @@
 import React from 'react';
 
-import {SafeAreaView, StyleSheet, Text} from 'react-native';
+import {SafeAreaView, StyleSheet} from 'react-native';
+import Header from './components/Header';
 
 const App: React.FC = () => {
   return (
     <SafeAreaView style={style.App}>
-      <Text style={style.Title}>Welcome to sthima Academy</Text>
+      <Header />
     </SafeAreaView>
   );
 };
@@ -16,10 +17,6 @@ const style = StyleSheet.create({
   App: {
     flex: 1,
     backgroundColor: 'black',
-  },
-  Title: {
-    color: 'white',
-    fontSize: 30,
-    alignItems: 'center',
+    padding: 20,
   },
 });
