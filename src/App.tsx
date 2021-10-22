@@ -1,22 +1,22 @@
 import React from 'react';
 
-import {SafeAreaView, StyleSheet} from 'react-native';
+import {StyleSheet} from 'react-native';
+import {ThemeProvider} from 'styled-components';
+import Button from './components/Button';
 import Header from './components/Header';
+import useAppearence from './hooks/Appearence';
+import {Container} from './styles';
 
 const App: React.FC = () => {
+  const {theme} = useAppearence();
   return (
-    <SafeAreaView style={style.App}>
-      <Header />
-    </SafeAreaView>
+    <ThemeProvider theme={theme}>
+      <Container>
+        <Header />
+        <Button onPress={() => {}} />
+      </Container>
+    </ThemeProvider>
   );
 };
 
 export default App;
-
-const style = StyleSheet.create({
-  App: {
-    flex: 1,
-    backgroundColor: 'black',
-    padding: 20,
-  },
-});
