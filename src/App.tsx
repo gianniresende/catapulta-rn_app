@@ -1,6 +1,5 @@
 import React from 'react';
 
-import {StyleSheet} from 'react-native';
 import {ThemeProvider} from 'styled-components';
 import Button from './components/Button';
 import Header from './components/Header';
