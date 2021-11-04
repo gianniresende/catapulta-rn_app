@@ -21,7 +21,7 @@ export const themeDark: DefaultTheme = {
     },
     background: {
       main: Colors.black,
-      onMain: Colors.white,
+      onMain: Colors.black,
     },
     surface: {
       main: Colors.neutrais,

@@ -15,7 +15,7 @@ const Icon = ({icon, size = 20, activeColor, style}: Omit<IconProps, 'source'>) 
       <Container
         size={size}
         source={Icons[icon]}
-        style={[{tintColor: colors[activeColor].main}, style]}
+        style={[{tintColor: activeColor}, style]}
       />
     );
   }
