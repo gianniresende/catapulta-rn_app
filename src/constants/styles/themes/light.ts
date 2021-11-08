@@ -5,7 +5,7 @@
 import {DefaultTheme} from "styled-components";
 import * as Colors from '../colors';
 // eslint-disable-next-line prettier/prettier
-import { typographyCommon } from "./common";
+import { borders, spacing, typographyCommon } from "./common";
 
 export const themeLight: DefaultTheme = {
   colors: {
@@ -31,4 +31,6 @@ export const themeLight: DefaultTheme = {
     },
   },
   typography: typographyCommon,
+  borders,
+  spacing,
 };

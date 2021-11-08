@@ -26,18 +26,18 @@ export const Border = styled.View<BorderProps>`
   background-color: ${({color}) => color};
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   flex-direction: row;
   border-color: ${({borderColor}) => borderColor};
   border-width: 1px;
 `;
 
 export const Error = styled(Text)`
-  margin-top: 10px;
+  margin-top: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const Label = styled(Text)`
-  margin-top: 10px;
+  margin-top: ${({theme}) => theme.spacing.sm}px;
 `;
 
 export const IconContainer = styled.View<Pick<InputProps, 'iconPosition'>>`

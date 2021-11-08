@@ -2,14 +2,13 @@
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
 import styled from "styled-components/native";
-import Text from "../Text";
 import {Mode} from "./types";
-
 interface ContainerProps {
   readonly color: string;
   readonly borderColor: string;
   readonly mode: Mode;
 }
+
 export const Container = styled.TouchableOpacity<ContainerProps>`
   padding: 12px 0 12px 0;
   background-color: ${({color, mode}) => {
@@ -20,7 +19,7 @@ export const Container = styled.TouchableOpacity<ContainerProps>`
   }};
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: ${({theme}) => theme.borders.radius.sm}px;
   flex-direction: row;
   border-color: ${({borderColor}) => borderColor || 'transparent'};
   border-width: 1px;
@@ -37,5 +36,5 @@ export const Title = styled.Text<TitleProps>`
   color: ${({color}) => color};
 `;
 export const Loading = styled.ActivityIndicator`
-  margin-left: 10px;
+  margin-left: ${({theme}) => theme.spacing.sm}px;
 `;
