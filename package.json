@@ -12,8 +12,11 @@
     "preios": "npx react-native-asset"
   },
   "dependencies": {
+    "@react-navigation/native": "^6.0.6",
     "react": "17.0.2",
     "react-native": "0.66.0",
+    "react-native-safe-area-context": "^3.3.2",
+    "react-native-screens": "^3.9.0",
     "styled-components": "^5.3.3"
   },
   "devDependencies": {
@@ -21,6 +24,7 @@
     "@babel/runtime": "^7.12.5",
     "@react-native-community/eslint-config": "^2.0.0",
     "@types/jest": "^26.0.23",
+    "@types/react": "^17.0.35",
     "@types/react-native": "^0.65.0",
     "@types/react-test-renderer": "^17.0.1",
     "@types/styled-components": "^5.1.15",
