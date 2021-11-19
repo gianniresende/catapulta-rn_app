@@ -1,7 +1,5 @@
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import Home from '~/screen/Home';
-import Profile from '~/screen/Profile';
 import Icon from '~/components/Icon';
 import HomeStackNavigator from '../HomeStackNavigator';
 import ProfileStackNavigator from '../ProfileStackNavigator';
