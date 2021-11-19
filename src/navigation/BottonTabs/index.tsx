@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from '~/components/Icon';
 import HomeStackNavigator from '../HomeStackNavigator';
 import ProfileStackNavigator from '../ProfileStackNavigator';
 
-const BottonTab = createBottomTabNavigator();
+const BottonTab = createBottomTabNavigator<BottonTabParamsList>();
 
 const BottonTabs = () => {
   return (

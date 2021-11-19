@@ -1,9 +1,18 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
+import {useNavigation} from '@react-navigation/core';
 import React from 'react';
 import {Button, View} from 'react-native';
+const Feed: React.FC = () => {
+  const navigation = useNavigation<StartBotonTabNavigationProp>();
 
-const Feed: React.FC = ({navigation}) => {
+  navigation.navigate('profile');
+  navigation.navigate('home');
+
   const handlePress = () => {
-    navigation.navigate('stories');
+    navigation.navigate('home', {
+      screen: 'stories',
+      params: {para: 'Gianni'},
+    });
   };
 
   const handlePressToPosts = () => {

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
@@ -6,7 +7,7 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import Post from '~/screen/Post';
 import Profile from '~/screen/Profile';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<ProfileStackParamsList>();
 
 const ProfileStackNavigator = () => {
   return (
