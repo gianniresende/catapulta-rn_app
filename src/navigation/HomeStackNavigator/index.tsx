@@ -3,18 +3,18 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
-import Home from '~/screen/Home';
-import Profile from '~/screen/Profile';
+import Feed from '~/screen/Feed';
+import Stories from '~/screen/Stories';
 
 const Stack = createNativeStackNavigator();
 
-const Routes = () => {
+const HomeStackNavigator = () => {
   return (
     <Stack.Navigator initialRouteName="Home">
-      <Stack.Screen name="Home" component={Home}></Stack.Screen>
-      <Stack.Screen name="Profile" component={Profile}></Stack.Screen>
+      <Stack.Screen name="feed" component={Feed}></Stack.Screen>
+      <Stack.Screen name="stories" component={Stories}></Stack.Screen>
     </Stack.Navigator>
   );
 };
 
-export default Routes;
+export default HomeStackNavigator;
