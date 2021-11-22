@@ -1,18 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import Icon from '~/components/Icon';
-import HomeStackNavigator from '../HomeStackNavigator';
-import ProfileStackNavigator from '../ProfileStackNavigator';
+import Home from '~/screen/Signed/Home';
+import Profile from '~/screen/Signed/Profile';
 
 const BottonTab = createBottomTabNavigator<BottonTabParamsList>();
 
-const BottonTabs = () => {
+const BottonTabNavigator = () => {
   return (
     <BottonTab.Navigator>
       <BottonTab.Screen
         name="home"
-        component={HomeStackNavigator}
+        component={Home}
         options={{
           header: () => null,
           tabBarIcon: () => <Icon icon="fantasma" size={28} />,
@@ -20,7 +19,7 @@ const BottonTabs = () => {
       />
       <BottonTab.Screen
         name="profile"
-        component={ProfileStackNavigator}
+        component={Profile}
         options={{
           tabBarIcon: () => <Icon icon="ceifador" size={28} />,
         }}
@@ -29,4 +28,4 @@ const BottonTabs = () => {
   );
 };
 
-export default BottonTabs;
+export default BottonTabNavigator;
