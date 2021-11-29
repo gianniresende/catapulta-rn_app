@@ -6,6 +6,7 @@ import {ThemeProvider} from 'styled-components';
 
 import useAppearence from '~/hooks/Appearence';
 import Routes from './navigation';
+import {AuthProvider} from './context/Auth';
 
 const App: React.FC = () => {
   const {theme} = useAppearence();
@@ -13,7 +14,9 @@ const App: React.FC = () => {
   return (
     <ThemeProvider theme={theme}>
       <NavigationContainer>
-        <Routes />
+        <AuthProvider>
+          <Routes />
+        </AuthProvider>
       </NavigationContainer>
     </ThemeProvider>
   );
