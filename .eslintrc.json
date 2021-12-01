@@ -24,6 +24,11 @@
         "@typescript-eslint"
     ],
     "rules": {
+      "import/no-unresolved": [
+        2,
+        { "caseSensitive": false }
+      ],
+      "no-unused-vars": "off",
       "prettier/prettier": "error",
       "react-hooks/roles-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",

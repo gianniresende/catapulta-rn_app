@@ -26,7 +26,6 @@ const Button = ({
       onPress={onPress}
       {...rest}>
       <Title color={colorByMode}>{children}</Title>
-      {loading && <Loading size={15} color={colorByMode} />}
     </Container>
   );
 };
