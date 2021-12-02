@@ -9,7 +9,6 @@ const Button = ({
   children,
   mode = 'contained',
   color = 'primary',
-  loading = true,
   onPress,
   ...rest
 }: ButtonProps) => {
@@ -26,7 +25,6 @@ const Button = ({
       onPress={onPress}
       {...rest}>
       <Title color={colorByMode}>{children}</Title>
-      {loading && <Loading size={15} color={colorByMode} />}
     </Container>
   );
 };
