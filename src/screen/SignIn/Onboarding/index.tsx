@@ -1,12 +1,24 @@
-import {useContext} from 'react';
 import React from 'react';
-import {View} from 'react-native';
-import {AuthContext} from '~/context/Auth';
+import {SafeAreaView} from 'react-native-safe-area-context';
+import Button from '~/components/Button';
+import useAuth from '~/hooks/useAuth';
 
 const Onboarding: React.FC = () => {
-  const ctx = useContext(AuthContext);
-  console.log(ctx);
-  return <View />;
+  const {signIn, loading} = useAuth();
+  return (
+    <SafeAreaView>
+      <Button
+        loading={loading}
+        onPress={() =>
+          signIn({
+            email: '',
+            password: '',
+          })
+        }>
+        Sign in
+      </Button>
+    </SafeAreaView>
+  );
 };
 
 export default Onboarding;
