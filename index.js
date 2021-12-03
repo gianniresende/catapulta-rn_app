@@ -8,6 +8,7 @@ import {name as appName} from './app.json';
 
 if (__DEV__) {
   import('./ReactotronConfig').then(() => console.log('Reactotron Configured'));
+  require('./server');
 }
 
 AppRegistry.registerComponent(appName, () => App);
