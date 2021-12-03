@@ -4,6 +4,7 @@
 import React, {useState, createContext} from "react";
 import {UserDTO} from "~/@types/dtos/user";
 import {AuthContextProp} from "./types";
+import axios from 'axios';
 
 export const AuthContext = createContext<AuthContextProp>(
   {} as AuthContextProp,
@@ -18,12 +19,16 @@ export const AuthProvider: React.FC = ({children}) => {
   * Callbacks
   */
 
-  const signIn = async (data?: {email: string; password: string;}) => {
+  const signIn = async ({email, password}: {email: string; password: string;}) => {
     setLoading(true);
-    await new Promise(resolve => setTimeout(() => resolve('ok'), 2000));
+    const response = await axios.post('http://localhost:8080/api/auth', {
+      email,
+      password,
+    });
+    console.log(response.data.user);
+    setUser(response.data.user);
     setLoading(false);
     setIsSignedIn(true);
-    setUser({id: '12547df-136454afd-13451-132489'});
   };
 
   const signOut = () => {

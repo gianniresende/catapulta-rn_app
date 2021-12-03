@@ -11,8 +11,8 @@ const Onboarding: React.FC = () => {
         loading={loading}
         onPress={() =>
           signIn({
-            email: '',
-            password: '',
+            email: 'gianniresende@gmail.com',
+            password: '698dc19d489c4e4db73e28a713eab07b',
           })
         }>
         Sign in
