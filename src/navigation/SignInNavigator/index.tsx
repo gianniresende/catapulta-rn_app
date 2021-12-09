@@ -11,7 +11,10 @@ const Stack = createBottomTabNavigator<SignInStackParamsList>();
 
 const SignInNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        header: () => null,
+      }}>
       <Stack.Screen name='onBoarding' component={Onboarding} />
       <Stack.Screen name='access' component={Access} />
       <Stack.Screen name='signUp' component={SignUp} />

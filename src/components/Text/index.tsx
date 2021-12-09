@@ -6,7 +6,7 @@ import {Container} from './styles';
 const Text = ({children, color, typography, ...rest}: Props) => {
   return (
     // eslint-disable-next-line prettier/prettier
-    <Container color={color || 'primary'}
+    <Container color={color || 'surface'}
       typography={typography || 'body1'}
       {...rest}>
       {children}

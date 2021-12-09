@@ -10,7 +10,7 @@ import { borders, spacing, typographyCommon } from "./common";
 export const themeLight: DefaultTheme = {
   colors: {
     primary: {
-      main: Colors.brand04,
+      main: Colors.brand01,
       onMain: Colors.white,
     },
     secondary: {
@@ -27,7 +27,7 @@ export const themeLight: DefaultTheme = {
     },
     surface: {
       main: Colors.black,
-      onMain: Colors.neutrais,
+      onMain: Colors.white,
     },
   },
   typography: typographyCommon,

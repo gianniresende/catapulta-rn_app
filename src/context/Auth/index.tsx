@@ -4,7 +4,6 @@
 import React, {useState, useEffect, createContext} from "react";
 import {UserDTO} from "~/@types/dtos/user";
 import {asyncUserKeys, AuthContextProp, RequestSignData} from "./types";
-import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { signInResource } from "~/services/resource/auth";
 
