@@ -27,7 +27,6 @@ const Access: React.FC = () => {
   const handleNavigateToLogin = () => navigation.navigate('login');
   const handleNavigateToSignUp = () => navigation.navigate('signUp');
 
-
   return (
     <Container source={splashImage}>
       <StatusBar barStyle="light-content" />
