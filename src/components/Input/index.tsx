@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native';
 import Icon from '../Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
-  color = 'primary',
+  color = 'surface500',
   secureTextEntry,
   icon,
   iconColor,
@@ -85,7 +85,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
   return (
     <Container>
       {!!label && (
-        <Label color='surface' typography='body3'>{label}</Label>
+        <Label color='surface600' typography='body3'>{label}</Label>
       )}
       <Border
         color = 'transparent'

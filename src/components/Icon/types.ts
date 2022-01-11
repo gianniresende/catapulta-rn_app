@@ -8,7 +8,7 @@ import {NameIconTypes} from "../../constants/icons";
 
 export interface IconOptionProps {
   icon: NameIconTypes;
-  size: number;
+  size?: number;
   activeColor?: string;
 }
 

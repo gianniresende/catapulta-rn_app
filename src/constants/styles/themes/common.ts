@@ -39,8 +39,8 @@ export const typographyCommon: Typography = {
     fontFamily: Fonts.openSansRegular,
   },
   caption: {
-    fontSize: 12,
-    fontFamily: Fonts.openSansLight,
+    fontSize: 16,
+    fontFamily: Fonts.openSansRegular,
   },
   overline: {
     fontSize: 14,

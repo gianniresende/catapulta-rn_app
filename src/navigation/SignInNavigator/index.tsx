@@ -15,10 +15,10 @@ const SignInNavigator = () => {
       screenOptions={{
         header: () => null,
       }}>
-      <Stack.Screen name='onBoarding' component={Onboarding} />
-      <Stack.Screen name='access' component={Access} />
-      <Stack.Screen name='signUp' component={SignUp} />
-      <Stack.Screen name='login' component={Login} />
+      <Stack.Screen name="onBoarding" component={Onboarding} />
+      <Stack.Screen name="access" component={Access} />
+      <Stack.Screen name="signUp" component={SignUp} />
+      <Stack.Screen name="login" component={Login} />
     </Stack.Navigator>
   );
 };

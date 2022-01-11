@@ -1,12 +1,15 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, {useContext, useMemo} from 'react';
 import {ThemeContext} from 'styled-components';
 import {ButtonProps} from './types';
 
-import {Container, Title, Loading} from './styles';
+import {Container, Title, Loading, AbsolutePosition} from './styles';
 
 const Button = ({
   children,
+  icon,
+  typography = 'body2',
   mode = 'contained',
   color = 'primary',
   onPress,
@@ -24,7 +27,8 @@ const Button = ({
       borderColor={colors[color].main}
       onPress={onPress}
       {...rest}>
-      <Title color={colorByMode}>{children}</Title>
+      {!!icon && <AbsolutePosition>{icon}</AbsolutePosition>}
+      <Title typography={typography} color={colorByMode}>{children}</Title>
     </Container>
   );
 };
