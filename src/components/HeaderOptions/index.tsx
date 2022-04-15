@@ -14,8 +14,8 @@ const HeaderOptions = ({
   const {spacing} = useTheme();
   const highSeparatorStatusBar = useMemo(() => {
     return StatusBar.currentHeight
-      ? StatusBar.currentHeight + spacing.md
-      : spacing.md;
+      ? StatusBar.currentHeight + spacing.xxl
+      : spacing.xxl;
   }, [spacing]);
 
   return (

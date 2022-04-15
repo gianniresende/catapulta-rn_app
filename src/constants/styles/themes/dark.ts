@@ -28,6 +28,14 @@ export const themeDark: DefaultTheme = {
       main: Colors.black,
       onMain: Colors.white,
     },
+    surface50: {
+      main: Colors.gray50,
+      onMain: Colors.white,
+    },
+    surface100: {
+      main: Colors.gray100,
+      onMain: Colors.white,
+    },
     surface500: {
       main: Colors.gray500,
       onMain: Colors.white,
