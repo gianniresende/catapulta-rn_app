@@ -56,7 +56,7 @@ const Login: React.FC = () => {
     <Container>
       <StatusBar barStyle="dark-content" />
       <HeaderOptions
-        left={ <BackButton icon="closeX" onPress={handleGoBack} /> }
+        left={ <BackButton icon="back" onPress={handleGoBack} /> }
         right={
           <Text color="primary" typography="body1">
             Esqueci minha senha

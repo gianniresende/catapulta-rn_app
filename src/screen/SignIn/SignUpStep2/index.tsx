@@ -12,17 +12,22 @@ import Separator from '~/components/Separator';
 import Text from '~/components/Text';
 import useSignInNavigation from '~/hooks/useSignInNavigation';
 import { Container } from './styles';
-import {schemaSignUp} from './validation';
+import {schemaSignUpStep2} from './validation';
 import Bar from 'react-native-progress/Bar';
 import BackButton from '~/components/BackButton';
-import SignUpStep2 from '../SignUpStep2';
+import { useRoute } from '@react-navigation/native';
 
 // import { Container } from './styles';
 
-const SignUp = () => {
+const SignUpStep2 = () => {
   const {spacing, colors} = useTheme();
   const navigation = useSignInNavigation();
+  const {
+    params: {email, firstName, lastName},
+  } = useRoute<SignUpStep2SignInStackRouteProp>();
   const {width} = useWindowDimensions();
+
+  console.log({email, firstName, lastName});
 
   const {
     control,
@@ -32,11 +37,10 @@ const SignUp = () => {
   // eslint-disable-next-line prettier/prettier
   } = useForm(
     {
-      resolver: yupResolver(schemaSignUp),
+      resolver: yupResolver(schemaSignUpStep2),
       defaultValues: {
-        email: '',
-        firstName: '',
-        lastName: '',
+        password: '',
+        confirmPassword: '',
       },
     }
   );
@@ -59,13 +63,8 @@ const SignUp = () => {
 
   const handleGoBack = () => navigation.goBack();
   const onSubmit = async () => {
-    await handleSubmit(({email, firstName, lastName}) => {
-      console.log({email, firstName, lastName});
-      navigation.navigate('SignUpStep2', {
-        email,
-        firstName,
-        lastName,
-      });
+    await handleSubmit(({password, confirmPassword}) => {
+      console.log({password, confirmPassword});
     })();
   };
 
@@ -77,7 +76,7 @@ const SignUp = () => {
         center={<Separator width={spacing.md} />}
         right={
           <Bar
-          progress={0.5}
+          progress={1}
           colors={colors.primary.main}
           unfilledColor={colors.surface50.main}
           borderWidth={0}
@@ -88,63 +87,54 @@ const SignUp = () => {
       <Separator height={spacing.md} />
       <Text typography="h3">Cadastro</Text>
       <Separator height={spacing.md} />
-      <Text color="surface100" typography="caption">Informações pessoais</Text>
+      <Text color="surface100" typography="caption">
+        { `Sua senha precisa ter \n8 caracteres`}
+      </Text>
       <Separator height={spacing.md} />
       <Controller
         control={control}
-        name="firstName"
+        name="password"
         render={({field: {onBlur, onChange, value, ref}}) => (
           <Input
             ref={ref}
             onChange={onChange}
             onBlur={onBlur}
             value={value}
-            onChangeText={text => setValue('firstName', text)}
-            label="Nome"
-            error={errors.firstName?.message}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="lastName"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-          ref={ref}
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
-          onChangeText={text => setValue('lastName', text)}
-          label="Sobre Nome"
-          error={errors.lastName?.message}
-          />
-        )}
-      />
-      <Controller
-        control={control}
-        name="email"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            onChangeText={text => setValue('email', text)}
+            secureTextEntry
+            onChangeText={text => setValue('password', text)}
             autoCapitalize="none"
-            autoCompleteType="email"
-            keyboardType="email-address"
-            label="Email"
+            autoCompleteType="password"
+            label="Senha"
             icon="checkCircle"
             iconColor="primary"
-            error={errors.email?.message}
+            error={errors.password?.message}
+          />
+        )}
+      />
+      <Controller
+        control={control}
+        name="confirmPassword"
+        render={({field: {onBlur, onChange, value, ref}}) => (
+          <Input
+            ref={ref}
+            onChange={onChange}
+            onBlur={onBlur}
+            value={value}
+            secureTextEntry
+            onChangeText={text => setValue('confirmPassword', text)}
+            autoCapitalize="none"
+            autoCompleteType="password"
+            label="Confirmar Senha"
+            iconColor="primary"
+            error={errors.confirmPassword?.message}
           />
         )}
       />
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Cadastrar</Button>
+      <Button onPress={onSubmit}>Finalizar</Button>
       <Separator height={spacing.md} />
     </Container>
   );
 };
 
-export default SignUp;
+export default SignUpStep2;
