@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "685792060120",
+    "project_id": "vacinadx-a6626",
+    "storage_bucket": "vacinadx-a6626.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:685792060120:android:d087dbcd1135358c54adad",
+        "android_client_info": {
+          "package_name": "com.awesometsproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "685792060120-fh0hmk2hb7ltl1sh9t4j29hgotu2h7p5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.awesometsproject",
+            "certificate_hash": "9cb3643e1bf565d0d9d8a87c2ee038af80b7f210"
+          }
+        },
+        {
+          "client_id": "685792060120-vqajgkbtnvdaa334scq4675oa8e0q2jq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZs6SQBLlE8kP3y_V-OF6PP5K1W8cLCR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "685792060120-vqajgkbtnvdaa334scq4675oa8e0q2jq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
