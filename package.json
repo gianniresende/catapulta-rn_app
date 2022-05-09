@@ -12,16 +12,24 @@
     "preios": "npx react-native-asset"
   },
   "dependencies": {
+    "@hookform/resolvers": "^2.8.5",
+    "@invertase/react-native-apple-authentication": "^2.1.5",
     "@react-native-async-storage/async-storage": "^1.15.14",
+    "@react-native-firebase/app": "^14.9.1",
+    "@react-native-firebase/auth": "^14.9.1",
+    "@react-native-google-signin/google-signin": "^7.2.2",
     "@react-navigation/bottom-tabs": "^6.0.9",
     "@react-navigation/native": "^6.0.6",
     "@react-navigation/native-stack": "^6.2.5",
     "axios": "^0.24.0",
     "react": "17.0.2",
+    "react-hook-form": "^7.22.5",
     "react-native": "0.66.0",
+    "react-native-progress": "^5.0.0",
     "react-native-safe-area-context": "^3.3.2",
     "react-native-screens": "^3.9.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",

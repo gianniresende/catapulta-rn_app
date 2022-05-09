@@ -11,7 +11,7 @@ import { TouchableOpacity } from 'react-native';
 import Icon from '../Icon';
 
 const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
-  color = 'primary',
+  color = 'surface500',
   secureTextEntry,
   icon,
   iconColor,
@@ -56,8 +56,8 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
         <TouchableOpacity onPress={() => setPasswordVisible(old => !old)}>
           <IconContainer iconPosition={iconPosition}>
             <Icon
-              icon={passwordVisible ? "eyeOpen" : "eyeClose"}
-              activeColor={selectedColorForActiveColorIcon} size={30}
+              icon={passwordVisible ? "openEye" : "closedEye"}
+              activeColor={selectedColorForActiveColorIcon} size={20}
             />
           </IconContainer>
         </TouchableOpacity>
@@ -68,7 +68,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
         <IconContainer iconPosition={iconPosition}>
           <Icon
             icon={icon}
-            activeColor={selectedColorForActiveColorIcon} size={30}
+            activeColor={selectedColorForActiveColorIcon} size={20}
           />
         </IconContainer>
       );
@@ -79,13 +79,13 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
       icon,
       iconPosition,
       passwordVisible,
-      selectedColorForActiveColorIcon
+      selectedColorForActiveColorIcon,
     ]);
 
   return (
     <Container>
       {!!label && (
-        <Label color='surface' typography='body3'>{label}</Label>
+        <Label color='surface600' typography='body3'>{label}</Label>
       )}
       <Border
         color = 'transparent'

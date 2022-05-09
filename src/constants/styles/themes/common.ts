@@ -11,8 +11,8 @@ export const typographyCommon: Typography = {
     fontFamily: Fonts.openSansLight,
   },
   h2: {
-    fontSize: 60,
-    fontFamily: Fonts.openSansLight,
+    fontSize: 48,
+    fontFamily: Fonts.montserratBold,
   },
   h3: {
     fontSize: 32,
@@ -39,8 +39,8 @@ export const typographyCommon: Typography = {
     fontFamily: Fonts.openSansRegular,
   },
   caption: {
-    fontSize: 12,
-    fontFamily: Fonts.openSansLight,
+    fontSize: 16,
+    fontFamily: Fonts.openSansRegular,
   },
   overline: {
     fontSize: 14,
@@ -66,7 +66,7 @@ export const spacing: Spacing = {
   sm: 10,
   md: 20,
   lg: 25,
-  xl: 30,
+  xl: 38,
   xxl: 45,
   xxxl: 100,
 };
