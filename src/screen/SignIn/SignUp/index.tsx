@@ -15,7 +15,6 @@ import { Container } from './styles';
 import {schemaSignUp} from './validation';
 import Bar from 'react-native-progress/Bar';
 import BackButton from '~/components/BackButton';
-import SignUpStep2 from '../SignUpStep2';
 
 // import { Container } from './styles';
 

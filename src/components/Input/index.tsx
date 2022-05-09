@@ -57,7 +57,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
           <IconContainer iconPosition={iconPosition}>
             <Icon
               icon={passwordVisible ? "openEye" : "closedEye"}
-              activeColor={selectedColorForActiveColorIcon} size={30}
+              activeColor={selectedColorForActiveColorIcon} size={20}
             />
           </IconContainer>
         </TouchableOpacity>
@@ -68,7 +68,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
         <IconContainer iconPosition={iconPosition}>
           <Icon
             icon={icon}
-            activeColor={selectedColorForActiveColorIcon} size={30}
+            activeColor={selectedColorForActiveColorIcon} size={20}
           />
         </IconContainer>
       );
@@ -79,7 +79,7 @@ const Input: React.ForwardRefRenderFunction<InputValueRef, InputProps> = ({
       icon,
       iconPosition,
       passwordVisible,
-      selectedColorForActiveColorIcon
+      selectedColorForActiveColorIcon,
     ]);
 
   return (

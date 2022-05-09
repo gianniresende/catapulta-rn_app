@@ -88,7 +88,7 @@ const SignUpStep2 = () => {
       <Text typography="h3">Cadastro</Text>
       <Separator height={spacing.md} />
       <Text color="surface100" typography="caption">
-        { `Sua senha precisa ter \n8 caracteres`}
+        { 'Sua senha precisa ter \n8 caracteres'}
       </Text>
       <Separator height={spacing.md} />
       <Controller

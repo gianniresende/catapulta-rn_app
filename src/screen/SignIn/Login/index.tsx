@@ -1,9 +1,11 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {StatusBar} from 'react-native';
 import {useTheme} from 'styled-components';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 import {Controller} from 'react-hook-form';
 import Button from '~/components/Button';
 import HeaderOptions from '~/components/HeaderOptions';
@@ -39,6 +41,15 @@ const Login: React.FC = () => {
       },
     }
   );
+
+  const handleGoodleButton = async () => {
+    try {
+      const {user} = await GoogleSignin.signIn();
+      console.log(user);
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
 
   /*
@@ -114,7 +125,13 @@ const Login: React.FC = () => {
       <Separator height={spacing.md} />
       <Button typography="caption" icon={<Icon icon="apple" />} color="secondary" mode="outlined">Continuar com a Apple</Button>
       <Separator height={spacing.md} />
-      <Button typography="caption" icon={<Icon icon="google" />} color="secondary" mode="outlined">Continuar com o Google</Button>
+      <Button
+        onPress={handleGoodleButton}
+        typography="caption"
+        icon={<Icon icon="google" />}
+        color="secondary"
+        mode="outlined">Continuar com o Google
+      </Button>
     </Container>
   );
 };
