@@ -18,10 +18,13 @@ import useSignInNavigation from '~/hooks/useSignInNavigation';
 import {Container, AccessText} from './styles';
 import {schemaLogin} from './validation';
 import BackButton from '~/components/BackButton';
+import useAuth from '~/hooks/useAuth';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
   const navigation = useSignInNavigation();
+
+  const {loading, signIn} = useAuth();
 
   /*
   * forms
@@ -36,8 +39,8 @@ const Login: React.FC = () => {
     {
       resolver: yupResolver(schemaLogin),
       defaultValues: {
-        email: '',
-        password: '',
+        email: __DEV__ ? 'gianniresende@gmail.com' : '',
+        password: __DEV__ ? '698dc19d489c4e4db73e28a713eab07b' : '',
       },
     }
   );
@@ -47,7 +50,7 @@ const Login: React.FC = () => {
       const {user} = await GoogleSignin.signIn();
       console.log(user);
     } catch (error) {
-      console.error(error);
+      //console.error(error);
     }
   };
 
@@ -57,9 +60,10 @@ const Login: React.FC = () => {
   */
 
   const handleGoBack = () => navigation.navigate('access');
+
   const onSubmit = async () => {
-    await handleSubmit((email, password) => {
-      console.log({email, password});
+    await handleSubmit(async ({email, password}) => {
+      await signIn({email, password});
     })();
   };
 
@@ -119,7 +123,7 @@ const Login: React.FC = () => {
         )}
       />
       <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Login</Button>
+      <Button loading={loading} disabled={loading} onPress={onSubmit}>Login</Button>
       <Separator height={spacing.md} />
       <AccessText color="surface500" typography="body3">ou acesse login social</AccessText>
       <Separator height={spacing.md} />

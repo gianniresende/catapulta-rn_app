@@ -2,6 +2,7 @@
 /* eslint-disable quotes */
 /* eslint-disable prettier/prettier */
 import {UserDTO} from "~/@types/dtos/user";
+import { RequestCreateUserData } from "~/services/resource/user/types";
 
 export interface RequestSignData {
   email: string;
@@ -13,6 +14,7 @@ export interface AuthContextProp {
   loading: boolean;
   user?: UserDTO;
   signIn: (data: RequestSignData) => Promise<void>;
+  signUp: (data: RequestCreateUserData) => Promise<void>;
   signOut: () => void;
 }
 
