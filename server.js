@@ -15,6 +15,7 @@ createServer({
       email: 'gianniresende@gmail.com',
       password: '698dc19d489c4e4db73e28a713eab07b',
       token: 'ayah34123hfadf7134hfadf4351341jdfhasdkf',
+      avatar: 'https://avatars.githubusercontent.com/u/45426692?v=4',
     });
   },
   routes() {

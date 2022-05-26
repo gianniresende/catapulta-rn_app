@@ -24,10 +24,10 @@ export const typographyCommon: Typography = {
   },
   h5: {
     fontSize: 24,
-    fontFamily: Fonts.montserratSemiBold,
+    fontFamily: Fonts.montserratBold,
   },
   h6: {
-    fontSize: 20,
+    fontSize: 24,
     fontFamily: Fonts.montserratRegular,
   },
   subtitle1: {
