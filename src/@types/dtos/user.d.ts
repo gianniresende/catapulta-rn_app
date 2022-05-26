@@ -3,4 +3,5 @@ export interface UserDTO {
   firstName: String;
   lastName: String;
   token: String;
+  avatar?: String;
 }
