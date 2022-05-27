@@ -10,10 +10,16 @@ import openEye from '~/assets/icons/openEye/Vector.png';
 import closedEye from '~/assets/icons/closedEye/Vector.png';
 import home from '~/assets/icons/home/Vector.png';
 import profile from '~/assets/icons/profile/Vector.png';
+import vaccine from '~/assets/icons/vaccine/Vector.png';
+import plus from '~/assets/icons/plus/Vector.png';
+import pin from '~assets/icons/pin/Vector.png';
 
 export type NameIconTypes =
   | 'home'
   | 'profile'
+  | 'vaccine'
+  | 'plus'
+  | 'pin'
   | 'pieChart'
   | 'openEye'
   | 'closedEye'
@@ -28,6 +34,9 @@ export type NameIconTypes =
 export default {
   home,
   profile,
+  vaccine,
+  plus,
+  pin,
   pieChart,
   openEye,
   closedEye,
