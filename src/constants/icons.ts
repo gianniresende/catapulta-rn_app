@@ -12,7 +12,8 @@ import home from '~/assets/icons/home/Vector.png';
 import profile from '~/assets/icons/profile/Vector.png';
 import vaccine from '~/assets/icons/vaccine/Vector.png';
 import plus from '~/assets/icons/plus/Vector.png';
-import pin from '~assets/icons/pin/Vector.png';
+import pin from '~/assets/icons/pin/Vector.png';
+import calendar from '~/assets/icons/calendar/Vector.png';
 
 export type NameIconTypes =
   | 'home'
@@ -20,6 +21,7 @@ export type NameIconTypes =
   | 'vaccine'
   | 'plus'
   | 'pin'
+  | 'calendar'
   | 'pieChart'
   | 'openEye'
   | 'closedEye'
@@ -37,6 +39,7 @@ export default {
   vaccine,
   plus,
   pin,
+  calendar,
   pieChart,
   openEye,
   closedEye,
