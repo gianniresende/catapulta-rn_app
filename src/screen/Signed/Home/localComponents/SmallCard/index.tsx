@@ -1,14 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
-import {Pressable, View} from 'react-native';
 import Icon from '~/components/Icon';
 import Separator from '~/components/Separator';
-import styles, {Circle, Container, Title} from './styles';
+import Shadow from '~/components/Shadow';
+import {Circle, Container, Title} from './styles';
 import {Props} from './types';
 
 const SmallCard = ({icon, title, onPress}: Props) => {
   return (
-    <Pressable style={styles.shadow} onPress={onPress}>
+    <Shadow onPress={onPress}>
       <Container>
         <Circle>
           <Icon icon={icon} size={20} activeColor="white" />
@@ -16,7 +16,7 @@ const SmallCard = ({icon, title, onPress}: Props) => {
         <Separator height={15} />
         <Title>{title}</Title>
       </Container>
-    </Pressable>
+    </Shadow>
   );
 };
 

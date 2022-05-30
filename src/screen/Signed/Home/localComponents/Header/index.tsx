@@ -1,7 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {Avatar, Container, Row} from './styles';
-
 import headerImage from '~/assets/images/Header.png';
 import useAuth from '~/hooks/useAuth';
 import Text from '~/components/Text';

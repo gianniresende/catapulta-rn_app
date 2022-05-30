@@ -10,6 +10,7 @@ import SmallCard from './localComponents/SmallCard';
 import {useTheme} from 'styled-components';
 import VaccineCard from '~/components/VaccineCard';
 import Text from '~/components/Text';
+import Banner from './localComponents/Banner';
 
 const Home: React.FC = () => {
   const {spacing} = useTheme();
@@ -21,33 +22,36 @@ const Home: React.FC = () => {
       <Separator height={spacing.md} />
       <ScrollViewItems horizontal>
         <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
-        <Separator width={15} />
+        <Separator width={10} />
         <SmallCard icon="plus" title={'Adicionar\nvacinas'} />
-        <Separator width={15} />
+        <Separator width={10} />
         <SmallCard icon="pin" title={'Procurar local\ndevacinação'} />
       </ScrollViewItems>
       <Content>
         <Text typography="h7">Próxima Vacinas</Text>
-        <Separator height={15} />
+        <Separator height={10} />
         <VaccineCard
           title="Triplice Viral"
           shot="single-dose"
           date={new Date(2022, 4, 1).toISOString()}
         />
-        <Separator height={15} />
+        <Separator height={10} />
         <VaccineCard
           title="Febre Amarela"
           shot="first-dose"
           date={new Date(2022, 4, 1).toISOString()}
         />
-        <Separator height={15} />
+        <Separator height={10} />
         <VaccineCard
           title="Pfizer"
           shot="second-dose"
           date={new Date().toISOString()}
         />
+        <Separator height={10} />
+        <Text typography="h7">Campanhas de Vacinação</Text>
+        <Separator height={10} />
+        <Banner source={require('~/assets/images/Banner/Banner.png')}/>
       </Content>
-      <Separator height={100} />
       <Button onPress={signOut}>Sign Out</Button>
     </Container>
   );
