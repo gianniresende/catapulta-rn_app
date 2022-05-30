@@ -1,16 +1,17 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable prettier/prettier */
-import { isBefore } from 'date-fns';
-import { format } from 'date-fns/esm';
-import is from 'date-fns/esm/locale/is/index.js';
-import React, { useMemo } from 'react';
-import {Pressable, View} from 'react-native';
-import { useTheme } from 'styled-components';
-import { orange } from '~/constants/styles/colors';
+import {isBefore} from 'date-fns';
+import {format} from 'date-fns/esm';
+import React, {useMemo} from 'react';
+import {View} from 'react-native';
+import {useTheme} from 'styled-components';
 import Icon from '../Icon';
 import Separator from '../Separator';
+import Shadow from '../Shadow';
 import Text from '../Text';
-import styles, {BadgeLeft, Chip, ChipWrap, Container, VaccineDate} from './styles';
+import {BadgeLeft, Chip, ChipWrap, Container, VaccineDate} from './styles';
+import {VaccineCardProps} from './types';
 
 const VaccineCard = ({title, date, shot, onPress}: VaccineCardProps) => {
   const isBeforeToday = useMemo(() => {
@@ -51,7 +52,7 @@ const VaccineCard = ({title, date, shot, onPress}: VaccineCardProps) => {
 
   }, [shot, colors]);
   return (
-    <Pressable onPress={onPress} style={styles.shadow}>
+    <Shadow onPress={onPress}>
       <Container>
         <BadgeLeft color={isBeforeToday ? colors.lightGreen.main : colors.orange.main} />
         <View>
@@ -69,7 +70,7 @@ const VaccineCard = ({title, date, shot, onPress}: VaccineCardProps) => {
           <Text>{formattedDate}</Text>
         </VaccineDate>
       </Container>
-    </Pressable>
+    </Shadow>
   );
 };
 
