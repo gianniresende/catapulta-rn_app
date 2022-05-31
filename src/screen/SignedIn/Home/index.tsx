@@ -56,7 +56,7 @@ const Home: React.FC = () => {
           date={new Date().toISOString()}
         />
         <Separator height={10} />
-        <Text typography="h7">Campanhas de Vacinação</Text>
+        <Text typography="h8">Campanhas de Vacinação</Text>
         <Separator height={10} />
         <Banner source={require('~/assets/images/Banner/Banner.png')}/>
       </Content>
