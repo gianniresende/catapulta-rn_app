@@ -8,6 +8,7 @@ import google from '~/assets/icons/google/Vector.png';
 import back from '~/assets/icons/back/Vector.png';
 import openEye from '~/assets/icons/openEye/Vector.png';
 import closedEye from '~/assets/icons/closedEye/Vector.png';
+import closeX from '~/assets/icons/closeX/Vector.png';
 import home from '~/assets/icons/home/Vector.png';
 import profile from '~/assets/icons/profile/Vector.png';
 import vaccine from '~/assets/icons/vaccine/Vector.png';
@@ -35,6 +36,7 @@ export type NameIconTypes =
   | 'pieChart'
   | 'openEye'
   | 'closedEye'
+  | 'closeX'
   | 'user'
   | 'doctor'
   | 'vaccinePlus'
@@ -58,6 +60,7 @@ export default {
   pieChart,
   openEye,
   closedEye,
+  closeX,
   user,
   doctor,
   vaccinePlus,
