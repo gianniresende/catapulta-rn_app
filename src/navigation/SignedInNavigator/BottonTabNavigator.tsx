@@ -4,6 +4,7 @@ import Icon from '~/components/Icon';
 import Home from '~/screen/SignedIn/Home';
 import Profile from '~/screen/SignedIn/Profile';
 import {useTheme} from 'styled-components';
+import HomeStack from './HomeStack';
 
 const BottonTab = createBottomTabNavigator<BottonTabParamsList>();
 
@@ -17,7 +18,7 @@ const BottonTabNavigator = () => {
       }}>
       <BottonTab.Screen
         name="home"
-        component={Home}
+        component={HomeStack}
         options={{
           header: () => null,
           tabBarIcon: ({color}) => <Icon icon="home" activeColor={color} />,
@@ -27,6 +28,7 @@ const BottonTabNavigator = () => {
         name="profile"
         component={Profile}
         options={{
+          header: () => null,
           tabBarIcon: ({color}) => <Icon icon="profile" activeColor={color} />,
         }}
       />

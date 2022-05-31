@@ -11,10 +11,14 @@ import {useTheme} from 'styled-components';
 import VaccineCard from '~/components/VaccineCard';
 import Text from '~/components/Text';
 import Banner from './localComponents/Banner';
+import {useNavigation} from '@react-navigation/native';
 
 const Home: React.FC = () => {
+  const {navigate} = useNavigation();
   const {spacing} = useTheme();
   const {signOut} = useAuth();
+  const handleAddVaccine = () => navigate('addVaccine');
+
   return (
     <Container>
       <StatusBar barStyle={'light-content'} />
@@ -23,7 +27,11 @@ const Home: React.FC = () => {
       <ScrollViewItems horizontal>
         <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
         <Separator width={10} />
-        <SmallCard icon="plus" title={'Adicionar\nvacinas'} />
+        <SmallCard
+          icon="plus"
+          title={'Adicionar\nvacinas'}
+          onPress={handleAddVaccine}
+        />
         <Separator width={10} />
         <SmallCard icon="pin" title={'Procurar local\ndevacinação'} />
       </ScrollViewItems>
