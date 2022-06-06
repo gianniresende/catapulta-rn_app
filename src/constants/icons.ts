@@ -8,6 +8,7 @@ import google from '~/assets/icons/google/Vector.png';
 import back from '~/assets/icons/back/Vector.png';
 import openEye from '~/assets/icons/openEye/Vector.png';
 import closedEye from '~/assets/icons/closedEye/Vector.png';
+import closeX from '~/assets/icons/closeX/Vector.png';
 import home from '~/assets/icons/home/Vector.png';
 import profile from '~/assets/icons/profile/Vector.png';
 import vaccine from '~/assets/icons/vaccine/Vector.png';
@@ -19,8 +20,12 @@ import notification from '~/assets/icons/notification/Vector.png';
 import logout from '~/assets/icons/logout/Vector.png';
 import qrCode from '~/assets/icons/qrcode/Vector.png';
 import pencil from '~/assets/icons/pencil/Vector.png';
+import radioButtonChecked from '~/assets/icons/radioButtonChecked/Vector.png';
+import radioButtonUnChecked from '~/assets/icons/radioButtonUnChecked/Vector.png';
 
 export type NameIconTypes =
+  | 'radioButtonChecked'
+  | 'radioButtonUnChecked'
   | 'home'
   | 'qrCode'
   | 'pencil'
@@ -35,6 +40,7 @@ export type NameIconTypes =
   | 'pieChart'
   | 'openEye'
   | 'closedEye'
+  | 'closeX'
   | 'user'
   | 'doctor'
   | 'vaccinePlus'
@@ -44,6 +50,8 @@ export type NameIconTypes =
   | 'google';
 
 export default {
+  radioButtonChecked,
+  radioButtonUnChecked,
   home,
   qrCode,
   pencil,
@@ -58,6 +66,7 @@ export default {
   pieChart,
   openEye,
   closedEye,
+  closeX,
   user,
   doctor,
   vaccinePlus,
