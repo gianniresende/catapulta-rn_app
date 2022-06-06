@@ -3,7 +3,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import React, { useMemo } from 'react';
 import { Controller, useForm } from 'react-hook-form';
-import { StatusBar, useWindowDimensions } from 'react-native';
+import { ScrollView, StatusBar, useWindowDimensions } from 'react-native';
 import { useTheme } from 'styled-components';
 import Button from '~/components/Button';
 import HeaderOptions from '~/components/HeaderOptions';
@@ -13,8 +13,9 @@ import Text from '~/components/Text';
 import useSignInNavigation from '~/hooks/useSignInNavigation';
 import { Container } from './styles';
 import {schemaSignUp} from './validation';
-import Bar from 'react-native-progress/Bar';
+import ProgressBar from 'react-native-progress/Bar';
 import BackButton from '~/components/BackButton';
+import AvoidKeyboard from '~/components/AvoidKeyboard';
 
 // import { Container } from './styles';
 
@@ -27,6 +28,7 @@ const SignUp = () => {
     control,
     handleSubmit,
     setValue,
+    setFocus,
     formState: {errors},
   // eslint-disable-next-line prettier/prettier
   } = useForm(
@@ -69,80 +71,94 @@ const SignUp = () => {
   };
 
   return (
-    <Container>
-      <StatusBar barStyle="dark-content" />
-      <HeaderOptions
-        left={ <BackButton icon="back" onPress={handleGoBack} /> }
-        center={<Separator width={spacing.md} />}
-        right={
-          <Bar
-          progress={0.5}
-          colors={colors.primary.main}
-          unfilledColor={colors.surface50.main}
-          borderWidth={0}
-          height={6}
-          width={WithProgressBar}
-        />}
-      />
-      <Separator height={spacing.md} />
-      <Text typography="h3">Cadastro</Text>
-      <Separator height={spacing.md} />
-      <Text color="surface100" typography="caption">Informações pessoais</Text>
-      <Separator height={spacing.md} />
-      <Controller
-        control={control}
-        name="firstName"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            onChangeText={text => setValue('firstName', text)}
-            label="Nome"
-            error={errors.firstName?.message}
+    <AvoidKeyboard>
+      <Container>
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <StatusBar barStyle="dark-content" />
+          <HeaderOptions
+            left={ <BackButton icon="back" onPress={handleGoBack} /> }
+            center={<Separator width={spacing.md} />}
+            right={
+              <ProgressBar
+              progress={0.5}
+              colors={colors.primary.main}
+              unfilledColor={colors.surface50.main}
+              borderWidth={0}
+              height={6}
+              width={WithProgressBar}
+            />}
           />
-        )}
-      />
-      <Controller
-        control={control}
-        name="lastName"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-          ref={ref}
-          onChange={onChange}
-          onBlur={onBlur}
-          value={value}
-          onChangeText={text => setValue('lastName', text)}
-          label="Sobre Nome"
-          error={errors.lastName?.message}
+          <Separator height={spacing.md} />
+          <Text typography="h3">Cadastro</Text>
+          <Separator height={spacing.md} />
+          <Text color="surface100" typography="caption">Informações pessoais</Text>
+          <Separator height={spacing.md} />
+          <Controller
+            control={control}
+            name="firstName"
+            render={({field: {onBlur, onChange, value, ref}}) => (
+              <Input
+                ref={ref}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                onChangeText={text => setValue('firstName', text)}
+                label="Nome"
+                error={errors.firstName?.message}
+                returnKeyType="next"
+                onSubmitEditing={() => {
+                  setFocus('lastName');
+                }}
+              />
+            )}
           />
-        )}
-      />
-      <Controller
-        control={control}
-        name="email"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            onChangeText={text => setValue('email', text)}
-            autoCapitalize="none"
-            autoCompleteType="email"
-            keyboardType="email-address"
-            label="Email"
-            icon="checkCircle"
-            iconColor="primary"
-            error={errors.email?.message}
+          <Controller
+            control={control}
+            name="lastName"
+            render={({field: {onBlur, onChange, value, ref}}) => (
+              <Input
+              ref={ref}
+              onChange={onChange}
+              onBlur={onBlur}
+              value={value}
+              onChangeText={text => setValue('lastName', text)}
+              label="Sobre Nome"
+              error={errors.lastName?.message}
+              returnKeyType="next"
+              onSubmitEditing={() => {
+                setFocus('email');
+              }}
+              />
+            )}
           />
-        )}
-      />
-      <Separator height={spacing.md} />
-      <Button onPress={onSubmit}>Cadastrar</Button>
-      <Separator height={spacing.md} />
-    </Container>
+          <Controller
+            control={control}
+            name="email"
+            render={({field: {onBlur, onChange, value, ref}}) => (
+              <Input
+                ref={ref}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                onChangeText={text => setValue('email', text)}
+                autoCapitalize="none"
+                autoCompleteType="email"
+                keyboardType="email-address"
+                label="Email"
+                icon="checkCircle"
+                iconColor="primary"
+                error={errors.email?.message}
+                returnKeyType="done"
+                onSubmitEditing={onSubmit}
+              />
+            )}
+          />
+          <Separator height={spacing.lg} />
+          <Button onPress={onSubmit}>Cadastrar</Button>
+          <Separator height={spacing.md} />
+        </ScrollView>
+      </Container>
+    </AvoidKeyboard>
   );
 };
 
