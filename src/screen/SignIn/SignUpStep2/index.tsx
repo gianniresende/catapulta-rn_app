@@ -56,7 +56,7 @@ const SignUpStep2 = () => {
   */
 
   const WithProgressBar = useMemo(() => {
-    const pressableXWidth = 35;
+    const pressableXWidth = 20;
     const marginScreenWidth = spacing.md * 2;
     const centerHeaderOptionWidth = spacing.md;
     const value = width - (marginScreenWidth + centerHeaderOptionWidth + pressableXWidth);
@@ -78,7 +78,11 @@ const SignUpStep2 = () => {
     <AvoidKeyboard>
       <ScrollView showsVerticalScrollIndicator={false}>
         <Container>
-          <StatusBar barStyle="dark-content" />
+          <StatusBar
+            barStyle="dark-content"
+            translucent
+            backgroundColor={'transparent'}
+          />
           <HeaderOptions
             left={ <BackButton icon="back" onPress={handleGoBack} /> }
             center={<Separator width={spacing.md} />}

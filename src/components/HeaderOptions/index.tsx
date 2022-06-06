@@ -7,15 +7,15 @@ import Separator from '../Separator';
 import {HeaderOptionsProps} from './types';
 
 const HeaderOptions = ({
-  left = <Separator />,
-  center = <Separator />,
-  right = <Separator />,
+  left = <Separator height={50} />,
+  center = <Separator width={1} />,
+  right = <Separator width={1} />,
 }: HeaderOptionsProps) => {
-  const {spacing} = useTheme();
+  const {spacing, colors} = useTheme();
   const highSeparatorStatusBar = useMemo(() => {
     return StatusBar.currentHeight
-      ? StatusBar.currentHeight + spacing.xxl
-      : spacing.xxl;
+      ? StatusBar.currentHeight - spacing.md
+      : spacing.sm;
   }, [spacing]);
 
   return (

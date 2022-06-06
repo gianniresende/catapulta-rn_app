@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {StatusBar} from 'react-native';
+import {ScrollView, StatusBar} from 'react-native';
 import {useTheme} from 'styled-components';
 import {useForm} from 'react-hook-form';
 import {yupResolver} from '@hookform/resolvers/yup';
@@ -19,6 +19,7 @@ import {Container, AccessText} from './styles';
 import {schemaLogin} from './validation';
 import BackButton from '~/components/BackButton';
 import useAuth from '~/hooks/useAuth';
+import AvoidKeyboard from '~/components/AvoidKeyboard';
 
 const Login: React.FC = () => {
   const {spacing} = useTheme();
@@ -34,6 +35,7 @@ const Login: React.FC = () => {
     control,
     handleSubmit,
     setValue,
+    setFocus,
     formState: {errors},
   } = useForm(
     {
@@ -68,75 +70,87 @@ const Login: React.FC = () => {
   };
 
   return (
-    <Container>
-      <StatusBar barStyle="dark-content" />
-      <HeaderOptions
-        left={ <BackButton icon="back" onPress={handleGoBack} /> }
-        right={
-          <Text color="primary" typography="body1">
-            Esqueci minha senha
-          </Text>
-        }
-      />
-      <Separator height={spacing.md} />
-      <Text typography="h3">Login</Text>
-      <Separator height={spacing.md} />
-      <Controller
-        control={control}
-        name="email"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            onChangeText={text => setValue('email', text)}
-            autoCapitalize="none"
-            autoCompleteType="email"
-            keyboardType="email-address"
-            label="Email"
-            icon="checkCircle"
-            iconColor="primary"
-            error={errors.email?.message}
+    <AvoidKeyboard>
+      <Container>
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor={'transparent'}
+        />
+        <HeaderOptions
+          left={ <BackButton icon="back" onPress={handleGoBack} /> }
+          right={
+            <Text color="primary" typography="caption">
+              Esqueci minha senha
+            </Text>
+          }
+        />
+        <Separator height={spacing.md} />
+        <ScrollView showsVerticalScrollIndicator={false}>
+          <Text typography="h3">Login</Text>
+          <Separator height={spacing.md} />
+          <Controller
+            control={control}
+            name="email"
+            render={({field: {onBlur, onChange, value, ref}}) => (
+              <Input
+                ref={ref}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                onChangeText={text => setValue('email', text)}
+                autoCapitalize="none"
+                autoCompleteType="email"
+                keyboardType="email-address"
+                label="Email"
+                icon="checkCircle"
+                iconColor="primary"
+                error={errors.email?.message}
+                returnKeyType="next"
+                onSubmitEditing={() => setFocus('password')}
+              />
+            )}
           />
-        )}
-      />
-      <Controller
-        control={control}
-        name="password"
-        render={({field: {onBlur, onChange, value, ref}}) => (
-          <Input
-            ref={ref}
-            onChange={onChange}
-            onBlur={onBlur}
-            value={value}
-            secureTextEntry
-            onChangeText={text => setValue('password', text)}
-            autoCapitalize="none"
-            autoCompleteType="password"
-            keyboardType="email-address"
-            label="Senha"
-            icon="checkCircle"
-            iconColor="primary"
-            error={errors.password?.message}
+          <Controller
+            control={control}
+            name="password"
+            render={({field: {onBlur, onChange, value, ref}}) => (
+              <Input
+                ref={ref}
+                onChange={onChange}
+                onBlur={onBlur}
+                value={value}
+                secureTextEntry
+                onChangeText={text => setValue('password', text)}
+                autoCapitalize="none"
+                autoCompleteType="password"
+                keyboardType="email-address"
+                label="Senha"
+                icon="checkCircle"
+                iconColor="primary"
+                error={errors.password?.message}
+                returnKeyType="done"
+                onSubmitEditing={onSubmit}
+              />
+            )}
           />
-        )}
-      />
-      <Separator height={spacing.md} />
-      <Button loading={loading} disabled={loading} onPress={onSubmit}>Login</Button>
-      <Separator height={spacing.md} />
-      <AccessText color="surface500" typography="body3">ou acesse login social</AccessText>
-      <Separator height={spacing.md} />
-      <Button typography="caption" icon={<Icon icon="apple" />} color="secondary" mode="outlined">Continuar com a Apple</Button>
-      <Separator height={spacing.md} />
-      <Button
-        onPress={handleGoodleButton}
-        typography="caption"
-        icon={<Icon icon="google" />}
-        color="secondary"
-        mode="outlined">Continuar com o Google
-      </Button>
-    </Container>
+          <Separator height={spacing.md} />
+          <Button loading={loading} disabled={loading} onPress={onSubmit}>Login</Button>
+          <Separator height={spacing.md} />
+          <AccessText color="surface500" typography="body3">ou acesse login social</AccessText>
+          <Separator height={spacing.md} />
+          <Button typography="caption" icon={<Icon icon="apple" />} color="secondary" mode="outlined">Continuar com a Apple</Button>
+          <Separator height={spacing.md} />
+          <Button
+            onPress={handleGoodleButton}
+            typography="caption"
+            icon={<Icon icon="google" />}
+            color="secondary"
+            mode="outlined">Continuar com o Google
+          </Button>
+        </ScrollView>
+      </Container>
+    </AvoidKeyboard>
   );
 };
 
