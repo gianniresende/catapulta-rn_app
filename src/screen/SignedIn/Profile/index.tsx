@@ -14,7 +14,11 @@ const Profile: React.FC = () => {
   return (
     <Container>
       <ScrollView>
-        <StatusBar barStyle={'dark-content'} />
+        <StatusBar
+          barStyle="dark-content"
+          translucent
+          backgroundColor={'transparent'}
+        />
         <Text typography="h5">Perfil</Text>
         <Separator height={spacing.lg} />
         <Row>

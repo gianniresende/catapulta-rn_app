@@ -21,7 +21,11 @@ const Home: React.FC = () => {
 
   return (
     <Container>
-      <StatusBar barStyle={'light-content'} />
+      <StatusBar
+        barStyle="dark-content"
+        translucent
+        backgroundColor={'transparent'}
+      />
       <Header />
       <Separator height={spacing.md} />
       <ScrollViewItems horizontal>
