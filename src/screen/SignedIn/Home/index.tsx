@@ -18,6 +18,7 @@ const Home: React.FC = () => {
   const {spacing} = useTheme();
   const {signOut} = useAuth();
   const handleAddVaccine = () => navigate('addVaccine');
+  const handleMyVaccine = () => navigate('myVaccine');
 
   return (
     <Container>
@@ -29,7 +30,11 @@ const Home: React.FC = () => {
       <Header />
       <Separator height={spacing.md} />
       <ScrollViewItems horizontal>
-        <SmallCard icon="vaccine" title={'Minhas\nvacinas'} />
+        <SmallCard
+          onPress={handleMyVaccine}
+          icon="vaccine"
+          title={'Minhas\nvacinas'}
+        />
         <Separator width={10} />
         <SmallCard
           icon="plus"

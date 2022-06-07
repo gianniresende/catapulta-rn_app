@@ -22,8 +22,10 @@ import qrCode from '~/assets/icons/qrcode/Vector.png';
 import pencil from '~/assets/icons/pencil/Vector.png';
 import radioButtonChecked from '~/assets/icons/radioButtonChecked/Vector.png';
 import radioButtonUnChecked from '~/assets/icons/radioButtonUnChecked/Vector.png';
+import search from '~/assets/icons/search/Vector.png';
 
 export type NameIconTypes =
+  | 'search'
   | 'radioButtonChecked'
   | 'radioButtonUnChecked'
   | 'home'
@@ -50,6 +52,7 @@ export type NameIconTypes =
   | 'google';
 
 export default {
+  search,
   radioButtonChecked,
   radioButtonUnChecked,
   home,
